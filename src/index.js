@@ -5,13 +5,5 @@ import App from './App'
 
 const root = document.getElementById('root');
 
-ReactDOM.render(<App />, root)
-const index = () => {
-    return (
-        <div>
-            
-        </div>
-    )
-}
+ReactDOM.render(<App />, root);
 
-export default index
