@@ -4,10 +4,7 @@ import styled, { css } from 'styled-components';
 
 import { Wrapper,FadeIn} from './styled/index';
 
-const OutterWrapper = styled.div`
-width:100%;
 
-`
 
 const StyledButton = styled.button`
   background-color:white;
@@ -33,21 +30,34 @@ const StyledButton = styled.button`
     color:blue;
     font-size:10px;
   }
+
 `;
 
 const SuperButton = styled(StyledButton)`
 font-size:2.5rem
 `;
 
+const OutterWrapper = styled.div`
+width:100%;
+background-color:blueviolet;
+margin-top: 2rem;
+
+&:hover ${StyledButton}{
+  color:red;
+}
+
+`
 const Button = ({ primary, children, margin }) => {
   return (
+    <OutterWrapper>
      <Wrapper > 
     <StyledButton primary={primary} margin={margin}>
       {children}
         <p className='someClass'>Test</p>
     </StyledButton>
 
-     </Wrapper>/*imported from styled folder*/ 
+     </Wrapper>/
+     </OutterWrapper>
   )
 }
 //    <SuperButton primary={primary}>{children} </SuperButton> you can try it ouf by putting in the Button component

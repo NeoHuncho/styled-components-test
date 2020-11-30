@@ -28,7 +28,7 @@ const App = () => {
             <Button primary margin='5rem'>My Primary button </Button>
             <Button >My Button</Button>
             <PaginationWrapper page='first'/**page='middle'*//**page='' */>
-                <Button>Page 1</Button>
+                <button>Page 1</button>
             </PaginationWrapper>
         </MainWrapper>
     )
