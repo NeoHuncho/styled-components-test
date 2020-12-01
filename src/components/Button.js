@@ -8,8 +8,8 @@ import { Wrapper,FadeIn} from './styled/index';
 
 const StyledButton = styled.button`
   background-color:white;
-  color: palevioletred;
-  font-size: 1.2rem;
+  color: ${(props) => props.theme.colors.text};
+  font-size: ${(props) => props.theme.fontSizes.p};
   margin: ${({ margin }) => margin || '2rem'};
   padding: .5rem 1rem;
   border: 1px solid palevioletred;
@@ -30,7 +30,9 @@ const StyledButton = styled.button`
     color:blue;
     font-size:10px;
   }
-
+  @media ${({theme})=> theme.mediaQueries.bellow768}{
+  font-size:0.4rem;
+}
 `;
 
 const SuperButton = styled(StyledButton)`
@@ -50,7 +52,7 @@ margin-top: 2rem;
 const Button = ({ primary, children, margin }) => {
   return (
     <OutterWrapper>
-     <Wrapper > 
+     <Wrapper/*imported from styled */ > 
     <StyledButton primary={primary} margin={margin}>
       {children}
         <p className='someClass'>Test</p>

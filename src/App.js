@@ -20,7 +20,15 @@ justify-content:${({page})=>{
     if(page=='first') return 'flex-end';
     else if (page== 'middle') return 'space-between';
     else return 'flex-start';
-}}`
+}}`;
+
+const Links= styled.a.attrs(props => ({
+    target: '_blank'
+}))`
+color: violet;
+font-size: 1.5rem;`
+
+
 const App = () => {
     //NEVER PUT STYYLED COMPONENT INSIDE HERE
     return (
@@ -30,6 +38,8 @@ const App = () => {
             <PaginationWrapper page='first'/**page='middle'*//**page='' */>
                 <button>Page 1</button>
             </PaginationWrapper>
+            <Links href='https://www.google.com' >One link</Links>
+            <Links href='https://www.google.com' > Another linl</Links>
         </MainWrapper>
     )
 }
